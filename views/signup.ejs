@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+
+        <!-- Error message (if exists) -->
+        <% if (typeof error !== 'undefined' && error) { %>
+            <p style="color: red; margin-top: 10px;"><%= error %></p>
+        <% } %>
+    </div>
+</body>
+</html>

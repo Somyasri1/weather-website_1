@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Welcome, <%= user ? user.name : 'User' %>!</p>
+
+        <h2>Search Weather</h2>
+        <form action="/weather" method="POST">
+            <input type="text" name="city" placeholder="Enter City" required />
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (weather) { %>
+            <div class="weather-card">
+                <h3>Weather in <%= weather.city %>:</h3>
+                <p>🌡 Temperature: <%= weather.temp %>°C</p>
+                <p>☁ Condition: <%= weather.condition %></p>
+            </div>
+        <% } %>
+
+        <!-- Logout Button -->
+        <form action="/logout" method="POST">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
+    </div>
+</body>
+</html>
