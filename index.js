@@ -120,10 +120,12 @@ app.post('/weather', async (req, res) => {
         const response = await axios.get(url);
         const data = response.data;
 
+        //  Added humidity here
         const weather = {
             city: data.name,
             temp: data.main.temp,
             condition: data.weather[0].main,
+            humidity: data.main.humidity
         };
 
         res.render('dashboard', { user: req.session.user, weather });
