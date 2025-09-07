@@ -18,8 +18,9 @@
         <% if (weather) { %>
             <div class="weather-card">
                 <h3>Weather in <%= weather.city %>:</h3>
-                <p>🌡 Temperature: <%= weather.temp %>°C</p>
-                <p>☁ Condition: <%= weather.condition %></p>
+                <p>Temperature: <%= weather.temp %>°C</p>
+                <p>Condition: <%= weather.condition %></p>
+                <p>Humidity: <%= weather.humidity %>%</p>              
             </div>
         <% } %>
 
